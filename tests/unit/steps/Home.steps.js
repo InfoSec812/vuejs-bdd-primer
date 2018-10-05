@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import App from '@/App.vue';
 
 const feature = loadFeature('tests/unit/features/Home.feature');
+
 defineFeature(feature, (test) => {
   test('Opening the initial web page', (given, when, then) => {
     let wrapper;
