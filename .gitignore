@@ -22,3 +22,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+
+# Test artifacts
+test-report.html
+selenium-debug.log
+coverage/**
+tests/e2e/reports/**
