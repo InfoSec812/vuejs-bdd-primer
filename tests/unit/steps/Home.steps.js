@@ -5,7 +5,7 @@ import App from '@/App.vue';
 const feature = loadFeature('tests/unit/features/Home.feature');
 
 defineFeature(feature, (test) => {
-  test('Opening the initial web page', (given, when, then) => {
+  test('Opening the initial web page', ({ given, when, then }) => {
     let wrapper;
     given('The page is open in a browser', () => {
       wrapper = mount(App);
