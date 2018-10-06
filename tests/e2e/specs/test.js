@@ -6,8 +6,8 @@ module.exports = {
     browser
       .url(process.env.VUE_DEV_SERVER_URL)
       .waitForElementVisible("#app", 5000)
-      .assert.elementPresent(".hello")
-      .assert.containsText("h1", "Welcome to Your Vue.js App")
+      .assert.elementPresent("main.q-layout-page")
+      .assert.containsText(".q-toolbar-title", "My New Application")
       .assert.elementCount("img", 1)
       .end();
   }

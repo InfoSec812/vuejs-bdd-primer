@@ -56,11 +56,15 @@ defineFeature(feature, test => {
     });
 
     then("the title bar should contain the correct words", () => {
-      expect(wrapper.find("div.q-toolbar-title").text()).toMatch(/^My New Application.*/);
+      expect(wrapper.find("div.q-toolbar-title").text()).toMatch(
+        /^My New Application.*/
+      );
     });
 
     then("there should be no other components in the page-view", () => {
-      expect(wrapper.find("main.q-layout-page").element.children.length).toBe(1);
+      expect(wrapper.find("main.q-layout-page").element.children.length).toBe(
+        1
+      );
     });
   });
 });
