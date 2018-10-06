@@ -7,4 +7,5 @@ Scenario: Opening the initial web page
   And the page should contain a Logo
   And the page should have a sidebar menu
   And the page should have a title bar
-  And the title bar should contain the words "My New Application"
+  And the title bar should contain the correct words
+  And there should be no other components in the page-view

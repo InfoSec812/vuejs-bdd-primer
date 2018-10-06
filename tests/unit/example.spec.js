@@ -1,12 +1,14 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Router from "vue-router";
+import Quasar from "quasar";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import Default from "src/layouts/Default.vue";
 
-describe("HelloWorld.vue", () => {
+describe("Default.vue", () => {
+  let localVue = createLocalVue();
+  localVue.use(Router);
+  localVue.use(Quasar);
   it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    });
-    expect(wrapper.text()).toMatch(msg);
+    const wrapper = shallowMount(Default, { localVue });
+    expect(wrapper.text()).toMatch(/.*Quasar.*/);
   });
 });
