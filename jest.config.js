@@ -25,7 +25,6 @@ module.exports = {
     quasar: "quasar-framework/dist/umd/quasar.mat.umd.min.js"
   },
   snapshotSerializers: ["jest-serializer-vue"],
-  // testMatch: ["**/tests/unit/**/*.spec.js"],
   reporters: [
     "default",
     [
