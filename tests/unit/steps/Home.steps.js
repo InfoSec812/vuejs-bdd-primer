@@ -60,7 +60,7 @@ defineFeature(feature, test => {
     });
 
     then("there should be no other components in the page-view", () => {
-      expect(wrapper.find("main.q-layout-page").children().len).toBe(1);
+      expect(wrapper.find("main.q-layout-page").element.children.length).toBe(1);
     });
   });
 });
