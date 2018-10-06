@@ -1,7 +1,9 @@
-# my-new-application
+# An Example Of How To use Jest/Jest-Cucumber to write Feature Specifications For Vue.js
 
 ## Project setup
 ```
+git clone git@github.com:InfoSec812/vuejs-bdd-primer.git
+cd vuejs-bdd-primer
 npm install
 ```
 
@@ -17,7 +19,7 @@ npm run build
 
 ### Run your tests
 ```
-npm run test
+npm test
 ```
 
 ### Lints and fixes files
