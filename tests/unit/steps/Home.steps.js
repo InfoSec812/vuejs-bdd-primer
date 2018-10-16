@@ -1,8 +1,8 @@
 import { defineFeature, loadFeature } from "jest-cucumber";
 import Quasar from "quasar-framework";
 import { mount, createLocalVue } from "@vue/test-utils";
-import Default from "./src/layouts/Default.vue";
-import router from "./src/router.js";
+import Default from "@/layouts/Default.vue";
+import router from "@/router.js";
 import iconSet from "quasar-framework/icons/fontawesome";
 import "quasar-extras/fontawesome";
 

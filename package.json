@@ -11,6 +11,7 @@
     "test": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "build": "^0.1.4",
     "quasar-extras": "^2.0.4",
     "quasar-framework": "^0.17.0",
     "register-service-worker": "^1.0.0",

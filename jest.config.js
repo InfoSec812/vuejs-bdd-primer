@@ -19,9 +19,8 @@ module.exports = {
   },
   moduleNameMapper: {
     "^vue$": "vue/dist/vue.common.js",
-    "src/([^\\.]*).js$": "<rootDir>/src/$1.js",
-    "src/([^\\.]*).vue$": "<rootDir>/src/$1.vue",
-    "src/([^\\.]*)/([^\\.]*).vue$": "<rootDir>/src/$1/$2.vue",
+    "^@/([^\\.]*).js$": "<rootDir>/src/$1.js",
+    "^@/(.*)$": "<rootDir>/src/$1",
     quasar: "quasar-framework/dist/umd/quasar.mat.umd.min.js"
   },
   snapshotSerializers: ["jest-serializer-vue"],
