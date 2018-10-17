@@ -2,7 +2,7 @@ module.exports = {
   moduleFileExtensions: ["js", "vue"],
   transform: {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-    ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    "^.+\\.(vue)$": "<rootDir>/node_modules/vue-jest"
   },
   verbose: true,
   collectCoverage: true,
@@ -19,7 +19,6 @@ module.exports = {
   },
   moduleNameMapper: {
     "^vue$": "vue/dist/vue.common.js",
-    "^@/([^\\.]*).js$": "<rootDir>/src/$1.js",
     "^@/(.*)$": "<rootDir>/src/$1",
     quasar: "quasar-framework/dist/umd/quasar.mat.umd.min.js"
   },
@@ -27,9 +26,11 @@ module.exports = {
   reporters: [
     "default",
     [
-      "./node_modules/jest-html-reporter",
-      {
-        pageTitle: "Test Report"
+      "./node_modules/jest-html-reporter", {
+        pageTitle: "Test Report",
+        includeFailureMsg: true,
+        includeConsoleLog: true,
+        theme: "darkTheme"
       }
     ]
   ],
