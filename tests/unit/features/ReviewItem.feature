@@ -12,5 +12,4 @@ Scenario: Value updated when edited
   And I click on the field value
   And I edit the field value
   And I click the Set button
-  Then I expect that the data will change
-  And an update event will be emitted
+  And an update event will be emitted with the new data

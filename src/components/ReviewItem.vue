@@ -7,9 +7,9 @@
     <q-td key="status">{{ status }}</q-td>
     <q-td key="fieldValue">
       {{ fieldValue }}
-      <q-popup-edit v-model="fieldValue" buttons>
+      <q-popup-edit v-model="fieldValue" @save="valueUpdateHandler" buttons>
         <q-field count>
-          <q-input v-model="fieldValue" @saved="valueUpdateHandler"/>
+          <q-input v-model="fieldValue"/>
         </q-field>
       </q-popup-edit>
     </q-td>
@@ -35,16 +35,7 @@ export default {
   },
   methods: {
     valueUpdateHandler: (val, initialValue) => {
-      this.reviewItemData.fieldValue = val;
-      this.$emit('fieldValueUpdate', this);
-    }
-  },
-  mounted: () => {
-    let vm = this;
-    console.log(JSON.stringify(vm));
-
-    Vue.nextTick(() => {
-      this.reviewItemData = {
+      let reviewItemData = {
         stixId: vm.stixId,
         actionDate: vm.actionDate,
         objectType: vm.objectType,
@@ -53,7 +44,9 @@ export default {
         status: vm.status,
         groupAction: vm.groupAction
       }
-    });
+      reviewItemData.fieldValue = val;
+      this.$emit('fieldValueUpdate', reviewItemData);
+    }
   }
 };
 </script>

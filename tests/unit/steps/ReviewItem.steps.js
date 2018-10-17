@@ -81,18 +81,13 @@ defineFeature(feature, test => {
       setButton.trigger("click");
     });
 
-    then(/^I expect that the data will change$/, () => {
-      expect(wrapper.vm.$data).toBeDefined();
-      expect(wrapper.vm.$data.reviewItemData).toBeDefined();
-      //expect(wrapper.vm.$data.reviewItemData.fieldValue).toEqual(TEST_VALUE_INPUT);
-    });
-
-    then(/^an update event will be emitted$/, () => {
+    then(/^an update event will be emitted with the new data$/, () => {
       let eventData = TEST_DATA;
       eventData.fieldValue = TEST_VALUE_INPUT;
-      expect(wrapper.emitted()).toBeDefined();
-      expect(wrapper.emitted()).toEqual({});  // Evaluates as true!!! - It should evaluate as false.
-      expect(wrapper.emitted().fieldValueUpdate[0]).toEqual(eventData);
+      expect(wrapper.emitted("fieldValueUpdate")).toBeDefined();
+      expect(wrapper.emitted("fieldValueUpdate").length).toEqual(1);
+      expect(wrapper.emitted("fieldValueUpdate")[0]).toEqual(eventData);
+      resolve();
     });
   });
 });
