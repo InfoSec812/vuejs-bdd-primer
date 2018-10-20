@@ -2,7 +2,7 @@
   <div class="column">>
     <q-input v-model="username" />
     <q-input v-model="password" type="password" />
-    <button @click="login">Log In</button>
+    <q-btn @click="login" label="Log In" />
   </div>
 </template>
 <script>
